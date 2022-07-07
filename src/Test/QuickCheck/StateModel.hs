@@ -37,6 +37,7 @@ module Test.QuickCheck.StateModel (
 import Control.Monad
 
 import Data.Data
+import Data.Kind
 
 import Test.QuickCheck as QC
 import Test.QuickCheck.DynamicLogic.SmartShrinking
@@ -106,7 +107,7 @@ class
   --   ...
   --   type ActionMonad (MyState m) = m
   -- @@
-  type ActionMonad state :: * -> *
+  type ActionMonad state :: Type -> Type
 
   -- | Display name for `Action`.
   -- This is useful to provide sensible statistics about the distribution of `Action`s run
